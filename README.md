@@ -3,11 +3,15 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: For each unit, we add the constraint that no box can contain a symbol that part of a "naked twin" pair found two other boxes in the same unit. To accomplish this,
+we first search inside each unit for pairs of boxes that have identical, two digit possibilities. ( For ex boxes A1 and A2 having both value "34"). Then we delete those possibilities from the rest of the boxes in unit ( in our example, we delete 3 and 4 from all the other boxes exept A1 and A2 in the unit).
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Diagonal Sudoku has one extra set of constraints compared to clasical Sudoku:
+the two diagonals must each contain each symbol (1-9) exactly once.
+So we need to extend our unitlist ( which already contains row_units, column_units and square_untis) by adding diagonal units.
+Once we add the new units ( two diagonal units ), the only_choice function will do the work of enforcing the constraint that these untis ( ass well as the classical units) contain each symbol exactly once.
 
 ### Install
 
